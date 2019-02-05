@@ -36,11 +36,14 @@ public class Player {
         this.life--;
     }
 
+    public int playerCovered(){
+        return this.life;
+    }
+
     @Override
     public String toString() {
-        return "Player{" +
+        return name + "{" +
                 "life=" + life +
-                ", name='" + name + '\'' +
                 ", bullet=" + bullet +
                 '}';
     }
