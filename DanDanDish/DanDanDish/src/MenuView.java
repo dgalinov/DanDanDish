@@ -6,8 +6,10 @@ public class MenuView {
     public MenuView() {
 
         Scanner sc = new Scanner(System.in);
-        Game game;
-        int option;
+        Player player1 = new Player();
+        Player player2 = new Player();
+        String name;
+        int option = 0;
         do {
             System.out.println("Choose an option[1-2]\n" +
                     "1. New Game\n" +
@@ -15,13 +17,13 @@ public class MenuView {
             option = Integer.parseInt(sc.nextLine());
             switch (option) {
                 case 1:
-                    game = new Game();
-                    game.introP1Name();
-                    game.introP2Name();
-                    do {
-                        game.play();
-                    }while ((!game.player2Dead()) && (!game.player1Dead()));
-
+                    System.out.println("Intro first player name: ");
+                    name = sc.nextLine();
+                    player1.setName(name);
+                    System.out.println("Intro second player name: ");
+                    name = sc.nextLine();
+                    player2.setName(name);
+                    Game game = new Game(player1, player2);
                     break;
                 case 2:
                     System.out.println("Exiting game...");

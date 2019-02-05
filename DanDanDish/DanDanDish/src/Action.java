@@ -1,5 +1,5 @@
 public enum Action {
-    LOAD,
     COVER,
+    LOAD,
     SHOOT
 }
